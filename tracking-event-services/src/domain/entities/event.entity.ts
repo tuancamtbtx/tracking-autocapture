@@ -1,4 +1,5 @@
-export class EventEntity {
+import BaseEntity from "@src/domain/entities/base.entity"
+export class EventEntity extends BaseEntity {
   public clientId: string
   public actionName: string
   public createdAt: number

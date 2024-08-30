@@ -13,7 +13,9 @@ const container = new Container()
 container.bind<IClient>('KafkaClient').to(KafkaClient)
 container.bind<IClient>('PubSubClient').to(PubSubClient)
 
-container.bind<IEventRepository>('EventRepository').to(EventRepository)
+container.bind<IEventRepository>('EventRepository').toDynamicValue((context) => {
+    return new EventRepository(context.container.get<IClient>('KafkaClient'))
+  })
 
 container.bind<SendSingleEventUseCase>('SendSingleEventUseCase').toDynamicValue((context) => {
   return new SendSingleEventUseCase(context.container.get<IEventRepository>('EventRepository'))
