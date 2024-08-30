@@ -27,7 +27,6 @@ import React, { memo, useState, ReactNode } from 'react'
 import UserDropDown from './user-dropdown'
 
 const { Header, Sider, Content, Footer } = Layout
-import { useSession } from 'next-auth/react'
 
 type IProps = {
   title?: string
@@ -44,13 +43,10 @@ const App = memo(({ title, activeMenuKey, children }: IProps) => {
   const [user, setUser] = useState<UserState>()
   const [selectedKey, setSelectedKey] = useState(activeMenuKey)
   const handleMenuClick = (e: any) => {
-    console.log(e.key)
     setSelectedKey(e.key)
   }
-  const { data: session, status } = useSession()
 
   useEffect(() => {
-    const user = session?.user
     setUser({
       name: user?.name as string,
       email: user?.email as string,
@@ -83,15 +79,15 @@ const App = memo(({ title, activeMenuKey, children }: IProps) => {
               )}
             </div>
             <LogoWrapper>
-              <img src='/logo.png' />
+              {/* <img src='/logo.png' /> */}
             </LogoWrapper>
           </div>
           <UserDropDown username={user?.name as string} avatar={user?.image as string} />
         </Header>
         <Layout style={{ marginTop: '1px' }}>
-          <Sider theme='dark' width={240} trigger={null} collapsible collapsed={collapsed}>
+          <Sider theme='light' width={240} trigger={null} collapsible collapsed={collapsed}>
             <Menu
-              theme='dark'
+              theme='light'
               mode='inline'
               defaultSelectedKeys={['1']}
               selectedKeys={[selectedKey as string]}
@@ -99,101 +95,24 @@ const App = memo(({ title, activeMenuKey, children }: IProps) => {
               defaultOpenKeys={['asset', 'configuration', 'cost', 'data']}
               items={[
                 {
-                  key: 'cost',
-                  label: 'Cost Management',
-                  icon: <ApiOutlined />,
-                  children: [
-                    {
-                      key: 'dashboard',
-                      icon: <HomeOutlined />,
-                      label: <Link href='/'>Dashboard</Link>
-                    },
-                    {
-                      key: 'billing',
-                      icon: <MoneyCollectOutlined />,
-                      label: <Link href='/billing'>Billing Invoice</Link>
-                    }
-                  ]
+                  key: 'dashboard',
+                  icon: <HomeOutlined />,
+                  label: <Link href='/'>Dashboard</Link>
                 },
                 {
-                  type: 'divider'
+                  key: 'insight',
+                  icon: <MoneyCollectOutlined />,
+                  label: <Link href='/insight'>Insight</Link>
                 },
                 {
-                  key: 'asset',
-                  label: 'Asset Management',
+                  key: 'events',
                   icon: <CodeOutlined />,
-                  children: [
-                    {
-                      key: 'alerts',
-                      icon: <AlertOutlined />,
-                      label: <Link href='/alerts'>Alerts</Link>
-                    },
-                    {
-                      key: 'budget',
-                      icon: <CiCircleOutlined />,
-                      label: <Link href='/budget'>Budget</Link>
-                    }
-                  ]
+                  label: <Link href='/insight'>Events</Link>
                 },
                 {
-                  type: 'divider'
-                },
-                {
-                  key: 'kubernetes',
-                  label: 'Kubernetes',
-                  icon: <KubernetesOutlined />,
-                  children: [
-                    {
-                      key: 'kubernetes',
-                      icon: <MoneyCollectOutlined />,
-                      label: <Link href='/billing'>Resources</Link>
-                    }
-                  ]
-                },
-                {
-                  type: 'divider'
-                },
-                {
-                  key: 'data',
-                  label: 'Data Management',
-                  icon: <ApartmentOutlined />,
-                  children: [
-                    {
-                      key: 'datamarts',
-                      icon: <ClusterOutlined />,
-                      label: <Link href='/datamarts'>Datamart</Link>
-                    },
-                    {
-                      key: 'etl',
-                      icon: <CiCircleOutlined />,
-                      label: <Link href='/etl'>ETL</Link>
-                    }
-                  ]
-                },
-                {
-                  type: 'divider'
-                },
-                {
-                  key: 'configuration',
-                  label: ' Configuration',
-                  icon: <AppstoreOutlined />,
-                  children: [
-                    {
-                      key: 'user',
-                      icon: <UserAddOutlined />,
-                      label: <Link href='/users'>Users</Link>
-                    },
-                    {
-                      key: 'permision',
-                      icon: <QuestionOutlined />,
-                      label: <Link href='/users'>Permisions</Link>
-                    },
-                    {
-                      key: 'role',
-                      icon: <DeploymentUnitOutlined />,
-                      label: <Link href='/users'>Roles</Link>
-                    }
-                  ]
+                  key: 'sessions',
+                  icon: <AlertOutlined />,
+                  label: <Link href='/insight'>Sessions</Link>
                 }
               ]}
             />
