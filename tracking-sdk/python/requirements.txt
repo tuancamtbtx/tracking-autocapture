@@ -1,0 +1,7 @@
+coloredlogs==15.0.1
+deepmerge==1.1.1
+loguru
+PyYAML==6.0
+pytest
+pendulum==3.0.0
+dacite
