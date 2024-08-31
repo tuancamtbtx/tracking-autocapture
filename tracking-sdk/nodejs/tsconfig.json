@@ -18,6 +18,6 @@
     "require": ["tsconfig-paths/register"],
     "esm": false
   },
-  "include": ["src/**/*", "server.ts"], // Đường dẫn include cho các file cần build
+  "include": ["src/**/*", "server.ts", "autocapture.ts"], // Đường dẫn include cho các file cần build
   "lib": ["es2021"]
 }
