@@ -1,0 +1,2 @@
+class KafkaDeserializer:
+    pass
