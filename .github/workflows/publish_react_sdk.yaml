@@ -1,4 +1,4 @@
-name: airfactory_docker_image_ci
+name: publish_react_sdk
 
 on:
   push:

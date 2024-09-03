@@ -1,4 +1,4 @@
-name: airfactory_docker_image_ci
+name: docker_ui
 
 on:
   push:
