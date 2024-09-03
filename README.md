@@ -1,5 +1,11 @@
 # Tracking Autocapture
-
+[![Docker Pulls](https://badgen.net/docker/pulls/vantuan12345/tracking-autocapture-ui?icon=docker&label=pulls)](https://hub.docker.com/r/vantuan12345/airlake/)
+[![Docker Stars](https://badgen.net/docker/stars/vantuan12345/tracking-autocapture-service?icon=docker&label=stars)](https://hub.docker.com/r/vantuan12345/tracking-autocapture-service/)
+[![Docker Image Size](https://badgen.net/docker/size/vantuan12345/tracking-autocapture-api?icon=docker&label=image%20size)](https://hub.docker.com/r/vantuan12345/tracking-autocapture-api/)
+![Github stars](https://badgen.net/github/stars/tuancamtbtx/tracking-autocapture?icon=github&label=stars)
+![Github forks](https://badgen.net/github/forks/tuancamtbtx/tracking-autocapture?icon=github&label=forks)
+![Github issues](https://img.shields.io/github/issues/tuancamtbtx/tracking-autocapture)
+![Github last-commit](https://img.shields.io/github/last-commit/tuancamtbtx/tracking-autocapture)
 ## Diagram Architecture
 
 <div align="center">
