@@ -15,10 +15,9 @@
 ## SDK
 **Node Js**
 ```js
-const tracking = new TrackingCapture({
+const tracking = new HouseTrackingProvider({
     URL: 'http://localhost:8080',
     API_KEY: 'xxx',
-    API_ID: 'xxx'
 })
 tracking.capture(
     'event': 'impression',
@@ -49,10 +48,9 @@ tracking.capture(
 
 **React Js**
 ```jsx
-const tracking = new TrackingCapture({
+const tracking = new HouseTrackingProvider({
     URL: 'http://localhost:8080',
     API_KEY: 'xxx',
-    API_ID: 'xxx'
 })
 tracking.capture(
     'event': 'impression',
