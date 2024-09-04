@@ -1,4 +1,4 @@
-import BaseEntity from "@src/domain/entities/base.entity"
+import BaseEntity from '@src/domain/entities/base.entity'
 export class EventEntity extends BaseEntity {
   public clientId: string
   public actionName: string

@@ -1,5 +1,7 @@
 import express, { Application } from 'express'
 
+require('dotenv').config()
+
 import Routers from '@src/app/routers'
 import logger from '@src/utils/logger'
 

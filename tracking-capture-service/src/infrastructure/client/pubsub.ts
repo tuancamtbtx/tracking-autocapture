@@ -11,7 +11,7 @@ export class PubSubClient implements IClient {
     throw new Error('Method not implemented.')
   }
 
-  async push({eventId, topic}, event:EventEntity): Promise<void> {
+  async push({ eventId, topic }, event: EventEntity): Promise<void> {
     throw new Error('Method not implemented.')
   }
 }

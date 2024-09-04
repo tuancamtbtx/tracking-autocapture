@@ -9,4 +9,10 @@ export default class EventDto {
 
   @IsNumber()
   public createdAt: number
+
+  @IsString()
+  platform: string
+
+  @IsString()
+  version: string
 }
