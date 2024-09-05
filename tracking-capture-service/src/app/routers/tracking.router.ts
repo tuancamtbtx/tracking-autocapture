@@ -1,10 +1,13 @@
 import { Router } from 'express'
 import { TrackingController } from '@src/app/controllers/tracking.controller'
-import EventDIContainer from '@src/infrastructure/binds/di'
+import EventDIContainer from '@src/infrastructure/container/di'
+import logger from '@src/utils/logger'
+
 class TrackingRouter {
   router = Router()
   controller: TrackingController
   constructor() {
+    logger.info('TrackingRouter Initialized')
     this.intializeRoutes()
     this.controller = new TrackingController(EventDIContainer.get('SendSingleEventUseCase'))
   }
