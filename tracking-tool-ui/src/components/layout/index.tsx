@@ -109,22 +109,22 @@ const App = memo(({ title, activeMenuKey, children }: IProps) => {
                   label: <Link href='/insight'>Insight</Link>
                 },
                 {
-                  key: 'events',
+                  key: 'recording',
                   icon: <CodeOutlined />,
-                  label: <Link href='/insight'>Events</Link>
+                  label: <Link href='/recording'>Recording</Link>
                 },
                 {
-                  key: 'sessions',
+                  key: 'experiments',
                   icon: <AlertOutlined />,
-                  label: <Link href='/insight'>Sessions</Link>
+                  label: <Link href='/experiments'>Experiments</Link>
                 },
                 {
                   type: 'divider'
                 },
                 {
-                  key: 'sessions',
+                  key: 'settings',
                   icon: <SettingOutlined />,
-                  label: <Link href='/setting'>Settings</Link>
+                  label: <Link href='/settings'>Settings</Link>
                 }
               ]}
             />

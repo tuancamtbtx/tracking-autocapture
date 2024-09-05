@@ -15,12 +15,11 @@
 ## SDK
 **Node Js**
 ```js
-const tracking = new HouseTrackingProvider({
+const tracking = new HouseTrackingServce({
     URL: 'http://localhost:8080',
     API_KEY: 'xxx',
 })
 tracking.capture(
-    'event': 'impression',
     {
     "clientId": "exampleClientId",
     "actionName": "impression",
@@ -48,42 +47,39 @@ tracking.capture(
 
 **React Js**
 ```jsx
-const tracking = new HouseTrackingProvider({
-    URL: 'http://localhost:8080',
-    API_KEY: 'xxx',
-})
-tracking.capture(
-    'event': 'impression',
-    {
-    "clientId": "exampleClientId",
-    "actionName": "impression",
-    "createdAt": 1693401600000,
-    "eventProperties": {
-        "property1": "value1",
-        "property2": "value2"
-    },
-    "userProperties": {
-        "userId": "exampleUserId",
-        "userName": "exampleUserName"
-    },
-    "deviceProperties": {
-        "deviceId": "exampleDeviceId",
-        "deviceType": "exampleDeviceType"
-    },
-    "eventType": "exampleEventType",
-    "page": "examplePage",
-    "referrer": "exampleReferrer",
-    "platform": "examplePlatform",
-    "version": "v1"
-    }
-)
+// src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
+import { HouseTrackingProvider} from 'housetracking-js/react'
+
+const options = {
+  api_host: process.env.REACT_APP_PUBLIC_HOUSE_TRACKING_HOST,
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <HouseTrackingProvider 
+      apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
+      <App />
+    </HouseTrackingProvider>
+  </React.StrictMode>
+);
 ```
 
 
 ## Get started
 **Prerequire**
 **Setup**
+
+## Dashboard
+<div align="center">
+    <img align="center" src="./assets/tracking-funnel.png" alt="drawing" width="1000"/>
+</div>
 
 
 ## Contributing
