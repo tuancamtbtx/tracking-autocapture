@@ -5,6 +5,7 @@ import { EventEntity } from '@src/domain/entities/event.entity'
 import EventDto from '@src/app/dto/event.dto'
 import SendSingleEventUseCase from '@src/use-cases/send-single-event'
 import logger from '@src/utils/logger'
+import EventDIContainer from '@src/infrastructure/container/di'
 
 export class TrackingController {
   constructor(private readonly sendSingleEvent: SendSingleEventUseCase) {}
@@ -27,6 +28,8 @@ export class TrackingController {
       event.referrer = dto.referrer
       event.platform = dto.platform
       event.version = dto.version
+      let usecase:SendSingleEventUseCase = EventDIContainer.get('SendSingleEventUseCase')
+
       await this.sendSingleEvent.execute(event)
       res.status(200).json({
         message: 'success'
