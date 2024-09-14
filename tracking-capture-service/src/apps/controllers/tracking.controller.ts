@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { validate } from 'class-validator'
 
 import { EventEntity } from '@src/domain/entities/event.entity'
-import EventDto from '@src/app/dto/event.dto'
+import EventDto from '@src/apps/dto/event.dto'
 import SendSingleEventUseCase from '@src/use-cases/send-single-event'
 import logger from '@src/utils/logger'
 import EventDIContainer from '@src/infra/container/di'

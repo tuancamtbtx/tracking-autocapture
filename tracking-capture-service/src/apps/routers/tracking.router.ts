@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { TrackingController } from '@src/app/controllers/tracking.controller'
+import { TrackingController } from '@src/apps/controllers/tracking.controller'
 import EventDIContainer from '@src/infra/container/di'
 import logger from '@src/utils/logger'
 

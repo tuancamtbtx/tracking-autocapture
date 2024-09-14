@@ -2,11 +2,11 @@ import express, { Application } from 'express'
 
 require('dotenv').config()
 
-import Routers from '@src/app/routers'
+import Routers from '@src/apps/routers'
 import logger from '@src/utils/logger'
 
-import { errorReleaseMiddleware, error404Forwarder } from '@src/app/middlewares/error.middleware'
-import corsMiddleware from '@src/app/middlewares/cors.middleware'
+import { errorReleaseMiddleware, error404Forwarder } from '@src/apps/middlewares/error.middleware'
+import corsMiddleware from '@src/apps/middlewares/cors.middleware'
 const app: Application = express()
 
 app.use(express.json())
